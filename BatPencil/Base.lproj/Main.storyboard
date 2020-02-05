@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BatPencil" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HMS-Qc-74S"/>
+                        <viewControllerLayoutGuide type="bottom" id="AzH-OW-hKk"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RD7-Ab-ftj">
+                                <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                            </skView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIL-py-13y" customClass="CanvasView" customModule="BatPencil" customModuleProvider="target">
+                                <rect key="frame" x="1069" y="292" width="125" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fIL-py-13y" secondAttribute="height" multiplier="0.5" id="6PO-P8-9KX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9O-RD-afA">
+                                <rect key="frame" x="576" y="406.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RD7-Ab-ftj" secondAttribute="trailing" id="2rW-3x-uME"/>
+                            <constraint firstItem="r9O-RD-afA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C5f-4d-V8G"/>
+                            <constraint firstItem="fIL-py-13y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CMs-VP-YRw"/>
+                            <constraint firstItem="RD7-Ab-ftj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="E2S-9m-E7M"/>
+                            <constraint firstAttribute="bottom" secondItem="RD7-Ab-ftj" secondAttribute="bottom" id="FVT-pH-Tjw"/>
+                            <constraint firstItem="fIL-py-13y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="H8V-vW-PGe"/>
+                            <constraint firstAttribute="trailing" secondItem="fIL-py-13y" secondAttribute="trailing" id="N9F-Px-uvZ"/>
+                            <constraint firstItem="r9O-RD-afA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U11-Xd-VqL"/>
+                            <constraint firstItem="RD7-Ab-ftj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a3V-qC-hTD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="canvasView" destination="fIL-py-13y" id="dXy-LF-NeU"/>
+                        <outlet property="label" destination="r9O-RD-afA" id="RzZ-kp-29J"/>
+                        <outlet property="sceneView" destination="RD7-Ab-ftj" id="ysD-xe-ylX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
 </document>
